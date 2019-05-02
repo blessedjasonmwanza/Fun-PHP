@@ -7,6 +7,6 @@ Fun PHP - Open Source PHP module which Contains grouped Functions of common task
 
 -2- Extract Fun PHP file in your project folder
 
--3- require or include in your pproject files..
+-3- require or include in your project files..
 
 
