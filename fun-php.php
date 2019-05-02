@@ -1,29 +1,29 @@
 <?php
 //LAST UPDATE 
 // 02 - May - 2019	
-
+// display an errow message
 function common_error($msg)
 	{
 		echo('<label style="display:block;overflow-x:hidden; width:100%; text-align:center; margin:0px; line-height:25px; background-color:rgb(125, 0, 192); color:#FFF;font-family:cambria; box-shadow:0px 1px 1px 0px; text-shadow: 1px 1px 1px grey;font-size:small;"><b style="color:red; text-shadow: 1px 1px 1px #000; ">Problem Detected : </b>'.$msg.'</label>');
 	}
 
-// echos a report based on a past in msg
+// echo a report based on a past in message
 function report($msg)
-	{
-		echo('<label style="display:block;overflow-x:hidden; width:100%; text-align:center; margin:0px; line-height:25px; background-color:rgba(0, 132, 192, 1) !important; color:#FFF;font-family:cambria; box-shadow:0px 1px 1px 0px;"><b style="color:#c3cc00;">Report: </b>'.$msg.'</label>');
-	}
+{
+	echo('<label style="display:block;overflow-x:hidden; width:100%; text-align:center; margin:0px; line-height:25px; background-color:rgba(0, 132, 192, 1) !important; color:#FFF;font-family:cambria; box-shadow:0px 1px 1px 0px;"><b style="color:#c3cc00;">Report: </b>'.$msg.'</label>');
+}
 
-
+// import a file
 function import($file)
-	{
-		file_exists($file) ? @require $file : common_error("Could not find => ".$file);
-	}
+{
+	file_exists($file) ? @include $file : common_error("Could not find => ".$file);
+}
 
 function  link_css($file)
-	{
-			file_exists($file) ? printf('<link rel="stylesheet" type="text/css" href="'.$file.'" >') : common_error("Could not find => ".$file);
-	}
-
+{
+	file_exists($file) ? printf('<link rel="stylesheet" type="text/css" href="'.$file.'" >') : common_error("Could not find => ".$file);
+}
+// rredirect from current page to another page
 function redirect($site){
 	header('Location:'.$site);
 }
@@ -34,22 +34,25 @@ function html_comment($msg){
 		  "
 		;
 }
+
 function php_comment($msg){
 	echo "	/*--".$msg."	 */
 		  "
 		;
 }
-function cut_story($str, $length)
+// echo a short version of a string
+function echo_short_p($str, $length)
 {
-if(strlen($str)<=$length){
-	echo $str. '...';
+	if(strlen($str)<=$length){
+		echo $str. '...';
 
-}else{
-	$y=substr($str,0,$length) . '...';
-	echo $y;
+	}else{
+		$y=substr($str,0,$length) . '...';
+		echo $y;
+	}
 }
-}
-function cut_story_inner($str, $length)
+// echo a short version of a string
+function return_short_p($str, $length)
 {
 	if(strlen($str)<=$length){
 		return $str. '...';
@@ -108,17 +111,12 @@ function ip()
 		return $ip_adress;
 	}
 }
+// Prevent HTML Form resubmitions
 function stop_resubmition(){
 	echo "<script>
     if ( window.history.replaceState ) {
         window.history.replaceState( null, null, window.location.href );
     }
 </script>";
-}
-function hr(){
-    echo '<span class="hr2"></span>';
-}
-function hr1(){
-    echo '<span class="hr1 t-2px"></span>';
 }
 ?>
