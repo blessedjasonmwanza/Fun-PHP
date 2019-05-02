@@ -1,4 +1,4 @@
-![Logo](https://github.com/blessedjasonmwanza/Fun-PHP/blob/master/funphp.PNG?raw=true) "FunPHP logo"
+![Logo](https://github.com/blessedjasonmwanza/Fun-PHP/blob/master/funphp.PNG?raw=true)
 
 
 Fun PHP - Open Source PHP module which Contains grouped Functions of common tasks that developers perfome during thier development period.
